@@ -1,5 +1,5 @@
 # Light Sensor
-CSC 453 HW #1. I was in charge for the code for Device A which sampled the LDR and potentiometer values. I needed to use an ADC to retrieve the potentiometer values & after much research I ended up going with the MCP3008.
+CSC 453 HW #1. I was in charge of the code for Device A which sampled the LDR and potentiometer values. I needed to use an ADC to retrieve the potentiometer values & after much research I ended up going with the MCP3008 as opposed to the ADS1115.
 ### Broker Readme
 Author: Carter Thunes, Laptop #1/Broker
 * The computer runs Mosquitto locally & acts as the MQTT broker server. It handles all messages from the clients and then routes the messages to the appropriate destination clients.
