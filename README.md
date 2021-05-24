@@ -22,6 +22,14 @@ Author: Mason Rowland, Raspberry Pi B
 ### Device C Readme
 Author: Nick Richardson, Raspberry Pi C
 * Device C subscribes to "lightSensor", "threshold", and a special development test channel: "dev/test". The received lightSensor and threshold values are compared and the lightStatus is updated based on the value. If the light status is changed, this is reported to the broker on the channel: "LightStatus".
+* Endpoints: Nick (Device C) host is 192.168.1.153 and port is 1883.
 * **Prerequisites & Dependencies**: Python 3, Paho MQTT client (install: pip install paho-mqtt). To run:
 
       python3 device_c.py
+### Laptop #2 Readme
+Author: Carter Thunes, Laptop #2
+* Laptop #2 subscribes to all of the following topics upon connecting to the broker: lightSensor, threshold, LightStatus, Status/RaspberryPiA, Status/RaspberryPiC. Laptop #2 has an additional .py that only subscribes to lightStatus. It then prints the topics and their messages along with a timestamp. No duplicate messages from the broker will be displayed.
+* **Prerequisites & Dependencies**: Python 3, Paho MQTT client (install: pip install paho-mqtt). To run: navigate to folder where files are saved in cmd ('cd Documents\CSC453').
+
+      py laptop_2.py > output.txt
+      py laptop_2_led_1.py > outputled.txt
