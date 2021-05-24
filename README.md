@@ -1,5 +1,11 @@
 # Light Sensor
 CSC 453 HW 1
+### Broker Readme
+Author: Carter Thunes, Laptop #1/Broker
+* The computer runs Mosquitto locally & acts as the MQTT broker server. It handles all messages from the clients and then routes the messages to the appropriate destination clients.
+* **Prerequisites & Dependencies**: Mosquitto from their website, update config file for broker to CSC 453 requirements, and stored in \mosquitto folder, port forward port 1883 on broker's router to host that broker is run on, & disable any firewalls for things coming from port 1883. To run: on cmd navigate to folder where mosquitto was installed ('cd c:\Program Files\mosquitto'):
+
+      mosquitto -v -c csc453.conf
 ### Device A Readme
 Author: Soumya Gade, Raspberry Pi A
 * Device A samples LDR and potentiometer values every 100 ms. It publishes these to the broker after normalizing the raw values to be between 0 and 1. Device A subscribes to lightSensor and threshold upon connecting to the broker. On keyboard interrupt, Device A will perform GPIO cleanup & exit.
@@ -29,7 +35,7 @@ Author: Nick Richardson, Raspberry Pi C
 ### Laptop #2 Readme
 Author: Carter Thunes, Laptop #2
 * Laptop #2 subscribes to all of the following topics upon connecting to the broker: lightSensor, threshold, LightStatus, Status/RaspberryPiA, Status/RaspberryPiC. Laptop #2 has an additional .py that only subscribes to lightStatus. It then prints the topics and their messages along with a timestamp. No duplicate messages from the broker will be displayed.
-* **Prerequisites & Dependencies**: Python 3, Paho MQTT client (install: pip install paho-mqtt). To run: navigate to folder where files are saved in cmd ('cd Documents\CSC453').
+* **Prerequisites & Dependencies**: Python 3, Paho MQTT client (install: pip install paho-mqtt). To run: navigate to folder where files are saved in cmd ('cd Documents\CSC453'):
 
       py laptop_2.py > output.txt
       py laptop_2_led_1.py > outputled.txt
