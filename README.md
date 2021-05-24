@@ -19,3 +19,9 @@ Author: Mason Rowland, Raspberry Pi B
 * **Prerequisites & Dependencies**: Raspberry Pi set up as described in the Raspberry Pi B Schematics Diagram, Python 3, Paho MQTT client (install: pip install paho-mqtt). To run:
 
       python3 device_b.py
+### Device C Readme
+Author: Nick Richardson, Raspberry Pi C
+* Device C subscribes to "lightSensor", "threshold", and a special development test channel: "dev/test". The received lightSensor and threshold values are compared and the lightStatus is updated based on the value. If the light status is changed, this is reported to the broker on the channel: "LightStatus".
+* **Prerequisites & Dependencies**: Python 3, Paho MQTT client (install: pip install paho-mqtt). To run:
+
+      python3 device_c.py
