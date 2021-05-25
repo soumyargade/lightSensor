@@ -12,6 +12,8 @@ Author: Soumya Gade, Raspberry Pi A
 * **Prerequisites & Dependencies**: Raspberry Pi set up as described in the Raspberry Pi A Schematics Diagram, Python 3, Python installation of MCP3xxx Library, Paho MQTT client (install: pip install paho-mqtt). To run:
 
       python3 device_a.py
+     <img src="https://github.com/soumyargade/lightSensor/blob/main/images/piA.png" width="500">
+
 ### Device B Readme
 Author: Mason Rowland, Raspberry Pi B
 * Device B code controls the activation of LEDs 1-3, in each specific case:
@@ -25,6 +27,8 @@ Author: Mason Rowland, Raspberry Pi B
 * **Prerequisites & Dependencies**: Raspberry Pi set up as described in the Raspberry Pi B Schematics Diagram, Python 3, Paho MQTT client (install: pip install paho-mqtt). To run:
 
       python3 device_b.py
+     <img src="https://github.com/soumyargade/lightSensor/blob/main/images/piB.png" width="500">
+
 ### Device C Readme
 Author: Nick Richardson, Raspberry Pi C
 * Device C subscribes to "lightSensor", "threshold", and a special development test channel: "dev/test". The received lightSensor and threshold values are compared and the lightStatus is updated based on the value. If the light status is changed, this is reported to the broker on the channel: "LightStatus".
